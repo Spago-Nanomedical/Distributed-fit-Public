@@ -36,7 +36,7 @@ Version 2.0 saves all figures as .png files and writes all patient data in
 an excel file. It runs the program 14 times (once for each patient).
 
 Version 2.2 Calculates the GFR as well as possible based on age, height, 
-and weight.
+and weight. Due to GDPR concerns all body measures of the patients have been set to default
 """
 
 
@@ -102,9 +102,6 @@ def initPatients():
 
     patient1 = Patient()
     patient1.ID = 'Patient 1'
-    patient1.bodyWeight = 89
-    patient1.height = 170
-    patient1.age = 61
     patient1.nominalDose = 10 * 13 * patient1.bodyWeight  # Si/Mn is 13, umol
     patient1.tPts = np.array([0, 10, 20, 61, 65, 75, 90, 105, 161, 540, 1500, 14400])
     patient1.conc = np.array([0.023, 0.35, 0.69, 2.03, 1.858, 1.793, 1.577, 1.403, 1.117, 0.515, 0.305, 0.0854])
@@ -112,9 +109,6 @@ def initPatients():
 
     patient2 = Patient()
     patient2.ID = 'Patient 2'
-    patient2.bodyWeight = 96
-    patient2.height = 164
-    patient2.age = 64
     patient2.nominalDose = 10 * 13 * patient2.bodyWeight  # Si/Mn is 13
     patient2.tPts = np.array([0, 10, 20, 60, 65, 75, 90, 105, 179, 540, 1500, 23040])
     patient2.conc = np.array([0.0266, 0.352, 0.788, 1.982, 2.025, 1.851, 1.746, 1.488, 1.098, 0.624, 0.355, 0.0389])
@@ -122,9 +116,6 @@ def initPatients():
 
     patient3 = Patient()
     patient3.ID = 'Patient 3'
-    patient3.bodyWeight = 65
-    patient3.height = 159
-    patient3.age = 41
     patient3.nominalDose = 10 * 13 * patient3.bodyWeight  # Si/Mn is 13
     patient3.tPts = np.array([0, 10, 20 , 60, 65, 75, 90, 105, 170, 540, 1500, 17280])
     patient3.conc = np.array([0.034, 0.293, 0.642, 1.516, 1.484, 1.360, 1.183, 1.033, 0.808, 0.448, 0.279, 0.0543])
@@ -132,9 +123,6 @@ def initPatients():
 
     patient4 = Patient()
     patient4.ID = 'Patient 4'
-    patient4.bodyWeight = 111
-    patient4.height = 176
-    patient4.age = 57
     patient4.nominalDose = 10 * 13 * patient4.bodyWeight  # Si/Mn is 13
     patient4.tPts = np.array([0, 10, 20, 62, 65, 75, 90, 105, 170, 555, 1450, 5760])
     patient4.conc = np.array([0.018, 0.395, 0.728, 1.992, 1.921, 1.787, 1.515, 1.413, 1.169, 0.555, 0.379, 0.157])
@@ -142,9 +130,6 @@ def initPatients():
 
     patient5 = Patient()
     patient5.ID = 'Patient 5'
-    patient5.bodyWeight = 68
-    patient5.height = 165
-    patient5.age = 52
     patient5.nominalDose = 10 * 13 * patient5.bodyWeight  # Si/Mn is 13
     patient5.tPts = np.array([0, 10, 20, 63, 65, 75, 90, 105, 170, 542, 1455, 17280])
     patient5.conc = np.array([0.0189, 0.450, 0.873, 1.920, 1.983, 1.734, 1.531, 1.407, 1.080, 0.536, 0.347, 0.150])
@@ -152,9 +137,6 @@ def initPatients():
 
     patient6 = Patient()
     patient6.ID = 'Patient 6'
-    patient6.bodyWeight = 68
-    patient6.height = 166
-    patient6.age = 66
     patient6.nominalDose = 10 * 13 * patient6.bodyWeight  # Si/Mn is 13
     patient6.tPts = np.array([0, 10, 20, 60, 66, 75, 90, 105, 173, 540, 1455, 25920])
     patient6.conc = np.array([0.023, 0.366, 0.587, 1.483, 1.680, 1.498, 1.294, 1.183, 0.9414, 0.5113, 0.336, 0.0436])
@@ -162,18 +144,12 @@ def initPatients():
 
     patient7 = Patient()
     patient7.ID = 'Patient 7'
-    patient7.bodyWeight = 68
-    patient7.height = 170
-    patient7.age = 65
     patient7.nominalDose = 20 * 13 * patient7.bodyWeight  # Si/Mn is 13
     patient7.tPts = np.array([0, 10, 20, 60, 67, 75, 90, 105, 175, 540, 1501, 25930])
     patient7.conc = np.array([0.0156, 0.634, 1.430, 3.139, 2.960, 2.801, 2.515, 2.029, 1.726, 0.899, 0.808, 0.0654])
     myPatients.append(patient7)
 
     patient8 = Patient()
-    patient8.ID = 'Patient 8'
-    patient8.bodyWeight = 53
-    patient8.height = 162
     patient8.age = 71
     patient8.nominalDose = 20 * 13 * patient8.bodyWeight  # Si/Mn is 13
     patient8.tPts = np.array([0, 10, 20, 60, 65, 75, 90, 105, 160, 545, 1500, 5700])
@@ -182,9 +158,6 @@ def initPatients():
 
     patient9 = Patient()
     patient9.ID = 'Patient 9'
-    patient9.bodyWeight = 95.7
-    patient9.height = 161
-    patient9.age = 67
     patient9.nominalDose = 20 * 13 * patient9.bodyWeight  # Si/Mn is 13
     patient9.tPts = np.array([0, 10, 19, 61, 65, 77, 90, 105, 180, 540, 1495, 7125])
     patient9.conc = np.array([0.0379, 0.797, 1.523, 4.446, 4.499, 3.837, 3.512, 3.114, 2.656, 1.253, 0.703, 0.255])
@@ -192,9 +165,6 @@ def initPatients():
 
     patient10 = Patient()
     patient10.ID = 'Patient 10'
-    patient10.bodyWeight = 77.8
-    patient10.height = 162
-    patient10.age = 58
     patient10.nominalDose = 20 * 13 * patient10.bodyWeight  # Si/Mn is 13
     patient10.tPts = np.array([0, 10, 20, 60, 65, 75, 90, 105, 161, 537, 1490, 5588])
     patient10.conc = np.array([0.0,  0.679, 1.207, 3.077, 3.009, 2.774, 2.428, 2.311, 1.914, 0.992, 0.562, 0.282])
@@ -202,9 +172,6 @@ def initPatients():
 
     patient11 = Patient()
     patient11.ID = 'Patient 11'
-    patient11.bodyWeight = 74.4
-    patient11.height = 170
-    patient11.age = 74
     patient11.nominalDose = 20 * 13 * patient11.bodyWeight  # Si/Mn is 13
     patient11.tPts = np.array([0, 10, 20, 60, 66, 90, 105, 158, 543, 8667])
     patient11.conc = np.array([0.0, 0.881, 1.513, 3.756, 3.454, 2.923, 2.622, 2.236, 1.039, 0.194])
@@ -212,9 +179,6 @@ def initPatients():
 
     patient12 = Patient()
     patient12.ID = 'Patient 12'
-    patient12.bodyWeight = 84
-    patient12.height = 167
-    patient12.age = 84
     patient12.nominalDose = 20 * 13 * patient12.bodyWeight  # Si/Mn is 13
     patient12.tPts = np.array([0, 11, 20, 61, 65, 75, 90, 105, 176, 540, 9964])
     patient12.conc = np.array([0.049, 0.751, 1.431, 3.568, 3.554, 3.106, 2.895, 2.572, 2.416, 1.139, 0.170])
@@ -222,9 +186,6 @@ def initPatients():
 
     patient13 = Patient()
     patient13.ID = 'Patient 13'
-    patient13.bodyWeight = 75
-    patient13.height = 166
-    patient13.age = 56
     patient13.nominalDose = 20 * 13 * patient13.bodyWeight  # Si/Mn is 13
     patient13.tPts = np.array([0, 10, 20, 60, 65, 75, 90, 103, 180, 541, 5590])
     patient13.conc = np.array([0.0, 0.627, 1.341, 3.537, 3.311, 2.936, 2.631, 2.431, 1.900, 1.018, 0.279])
@@ -232,9 +193,6 @@ def initPatients():
 
     patient14 = Patient()
     patient14.ID = 'Patient 14'
-    patient14.bodyWeight = 44
-    patient14.height = 158
-    patient1.age = 66
     patient14.nominalDose = 20 * 13 * patient14.bodyWeight  # Si/Mn is 13
     patient14.tPts = np.array([0, 10, 20, 60, 65, 75, 90, 106, 180, 545, 2700])
     patient14.conc = np.array([0.0, 0.291, 0.970, 2.397, 2.435, 2.200, 1.879, 1.727, 1.398, 0.775, 0.334]) #mM
